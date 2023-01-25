@@ -39,6 +39,8 @@ gem 'rubocop-rails'
 gem 'sidekiq', '~> 7.0', '>= 7.0.3'
 gem 'redis', '~> 5.0', '>= 5.0.6'
 gem 'simple_form'
+gem 'mailtrap', '~> 0.2.1'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
