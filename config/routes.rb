@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  root to: "home#index"
+
   require "sidekiq/web"
   mount Sidekiq::Web => '/sidekiq'
-
   resources :posts
   devise_for :users
   devise_for :models

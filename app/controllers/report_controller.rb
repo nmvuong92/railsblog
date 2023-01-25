@@ -5,12 +5,13 @@ class ReportController < ApplicationController
   end
 
   def generate
-    flash[:message] = "success"
-    redirect_to "report"
+    flash[:message] = 'success'
+    CreateReportJob.perform_later
+    redirect_to '/report'
   end
 
   private
   def set_variable
-    @foo = "Foo value from controller"
+    @foo = 'Foo value from controller'
   end
 end
