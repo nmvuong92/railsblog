@@ -51,8 +51,24 @@ packages:
     postgresql-devel: []
 ```
 with aws linux 2
-```
+```shell
+packages:
+    yum:
+        postgresql-devel: []
+        amazon-linux-extras: []
+        git: []
+        patch: []
+        gcc: []
+        libxml2: []
+        libxml2-devel: []
+        libxslt: []
+        libxslt-devel: []
 
+commands:
+    01_postgres_activate:
+        command: sudo amazon-linux-extras enable postgresql14
+    02_postgres_install:
+        command: sudo yum install -y postgresql-devel
 ```
 ### testing
 ```shell
