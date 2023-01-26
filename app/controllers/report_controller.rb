@@ -1,8 +1,8 @@
-class ReportController < ApplicationController
-  before_action :set_variable, only: [:index, :generate]
-  def index
+# frozen_string_literal: true
 
-  end
+class ReportController < ApplicationController
+  before_action :set_variable, only: %i[index generate]
+  def index; end
 
   def generate
     flash[:message] = 'success'
@@ -11,6 +11,7 @@ class ReportController < ApplicationController
   end
 
   private
+
   def set_variable
     @foo = 'Foo value from controller'
   end

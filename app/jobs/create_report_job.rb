@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class CreateReportJob < ApplicationJob
   queue_as :default
 
-  def perform(*args)
+  def perform(*_args)
     # Do something later
-    puts 'generate report job is running...'
+    Rails.logger.debug 'generate report job is running...'
   end
 end
