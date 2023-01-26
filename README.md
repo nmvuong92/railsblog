@@ -47,3 +47,14 @@ bundle lock --add-platform x86_64-linux
 ```shell
 bundle exec rspec
 ```
+
+
+### debugging production
+download logs file from EB -> .elasticbeanstalk/logs/xxx.zip
+```shell
+eb logs -z
+```
+
+
+ref: 
+- https://medium.com/hackernoon/how-to-set-up-a-rails-4-1-app-on-aws-with-elastic-beanstalk-and-postgresql-66d4e3412629
