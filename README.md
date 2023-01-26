@@ -33,7 +33,7 @@ aws_secret_access_key = xxx
 ```
 ## issues
 ### fix gemfile.lock
-error:
+issue 1:
 ```text
 "Your bundle only supports platforms ["x86-mingw32"] but your local platforms are ["ruby", "x86_64-linux"]"
 ```
@@ -43,6 +43,17 @@ bundle lock --add-platform ruby
 bundle lock --add-platform x86_64-linux
 ```
 
+issue 2: An error occurred while installing pg (1.4.5), and Bundler cannot continue.
+with aws linux 1
+```
+packages:
+  yum:
+    postgresql-devel: []
+```
+with aws linux 2
+```
+
+```
 ### testing
 ```shell
 bundle exec rspec
