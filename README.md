@@ -9,6 +9,20 @@
 
 
 ## deployment
+### aws Beantalk
+to generate aws profile configuration
+```aws
+aws configure --profile eb_deploy
+```
+
+production migration (if needed)
+```shell
+rake db:migrate RAILS_ENV=production
+```
+build js/css in production
+```shell
+
+```
 
 
 ## issues
