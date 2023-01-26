@@ -1,3 +1,11 @@
 # README
 
 ## railsblog
+
+
+
+## development
+
+
+
+## deployment
