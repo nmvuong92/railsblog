@@ -54,16 +54,10 @@ jobs:
       - name: Run tests (rspec)
         run: bundle exec rspec
 
-  lint:
+  audit:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Install Ruby and gems
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-      # Add or replace any other lints here
+      - uses: actions/checkout@v2
       - name: 'Bundler Audit'
         uses: andrewmcodes/bundler-audit-action@main
         env:
