@@ -107,6 +107,8 @@
     <orderEntry type="library" scope="PROVIDED" name="sassc-rails (v2.1.2, rbenv: 3.0.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v4.7.1, rbenv: 3.0.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="semantic_range (v3.0.0, rbenv: 3.0.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sentry-rails (v5.7.0, rbenv: 3.0.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sentry-ruby (v5.7.0, rbenv: 3.0.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sidekiq (v7.0.3, rbenv: 3.0.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simple_form (v5.1.0, rbenv: 3.0.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="spring (v4.1.1, rbenv: 3.0.5) [gem]" level="application" />

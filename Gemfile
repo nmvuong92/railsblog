@@ -41,6 +41,8 @@ gem 'mailtrap', '~> 0.2.1'
 gem 'redis', '~> 5.0', '>= 5.0.6'
 gem 'rubocop'
 gem 'rubocop-rails'
+gem 'sentry-rails'
+gem 'sentry-ruby'
 gem 'sidekiq', '~> 7.0', '>= 7.0.3'
 gem 'simple_form'
 
