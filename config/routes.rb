@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :widgets
   root to: "home#index"
 
   require "sidekiq/web"
