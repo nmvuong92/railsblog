@@ -1,30 +1,36 @@
-# README
-
 ## railsblog
 
-
-
 ## development
-
-
-
+migration
+```shell
+rake db:migrate RAILS_ENV=development
+```
+build js/css/assets in development
+```
+./bin/webpack-dev-server
+```
+build js/css/assets in production
+```shell
+rake assets:precompile 
+```
 ## deployment
 ### aws Beantalk
 to generate aws profile configuration
-```aws
+```shell
 aws configure --profile eb_deploy
 ```
-
-production migration (if needed)
+init with profile (no needed)
 ```shell
-rake db:migrate RAILS_ENV=production
+eb init --profile eb_deploy
 ```
-build js/css in production
+deploy with profile
 ```shell
-
+eb deploy --profile eb_deploy
+cat ~/.aws/credentials
+[eb_deploy]
+aws_access_key_id = xxx
+aws_secret_access_key = xxx
 ```
-
-
 ## issues
 ### fix gemfile.lock
 error:
