@@ -6,20 +6,33 @@
 #
 default: &default
   adapter: postgresql
+  encoding: unicode
+  host: 'localhost'
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  username: postgres
+  password: postgres
 
 development:
   <<: *default
-  database: railsblog
+  host: <%= ENV.fetch('DB_HOST') %>
+  database: <%= ENV.fetch('DB_DATABASE'){ '' } %>
+  username: <%= ENV.fetch('DB_USERNAME'){ '' } %>
+  password: <%= ENV.fetch('DB_PASSWORD') { '' }%>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: railsblog_test
+  host: <%= ENV.fetch('DB_HOST') %>
+  database: <%= ENV.fetch('DB_DATABASE'){ '' } %>
+  username: <%= ENV.fetch('DB_USERNAME'){ '' } %>
+  password: <%= ENV.fetch('DB_PASSWORD') { '' }%>
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  host: <%= ENV.fetch('DB_HOST') %>
+  database: <%= ENV.fetch('DB_DATABASE'){ '' } %>
+  username: <%= ENV.fetch('DB_USERNAME'){ '' } %>
+  password: <%= ENV.fetch('DB_PASSWORD') { '' }%>
