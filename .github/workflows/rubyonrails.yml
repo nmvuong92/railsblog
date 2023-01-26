@@ -11,6 +11,11 @@ on:
   pull_request:
     branches: [ "main" ]
 jobs:
+  env:
+    DB_HOST: 'localhost'
+    DB_DATABASE: 'rails_test'
+    DB_USERNAME: 'rails'
+    DB_PASSWORD: 'password'
   test:
     runs-on: ubuntu-latest
     services:
@@ -19,9 +24,9 @@ jobs:
         ports:
           - "5432:5432"
         env:
-          POSTGRES_DB: rails_test
-          POSTGRES_USER: rails
-          POSTGRES_PASSWORD: password
+          POSTGRES_DB: ${{env.DB_DATABASE}}
+          POSTGRES_USER: ${{env.DB_USERNAME}}
+          POSTGRES_PASSWORD: ${{env.DB_PASSWORD}}
     env:
       RAILS_ENV: test
       DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
