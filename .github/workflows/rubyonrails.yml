@@ -11,12 +11,14 @@ on:
   pull_request:
     branches: [ "main" ]
 jobs:
-  env:
-    DB_HOST: 'localhost'
-    DB_DATABASE: 'rails_test'
-    DB_USERNAME: 'rails'
-    DB_PASSWORD: 'password'
   test:
+    env:
+      DB_HOST: 'localhost'
+      DB_DATABASE: 'rails_test'
+      DB_USERNAME: 'rails'
+      DB_PASSWORD: 'password'
+      RAILS_ENV: test
+      DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -27,9 +29,6 @@ jobs:
           POSTGRES_DB: ${{env.DB_DATABASE}}
           POSTGRES_USER: ${{env.DB_USERNAME}}
           POSTGRES_PASSWORD: ${{env.DB_PASSWORD}}
-    env:
-      RAILS_ENV: test
-      DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
