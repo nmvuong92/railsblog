@@ -46,6 +46,8 @@ services:
       context: .
       dockerfile: app.Dockerfile
     command: bash -c "bundle exec puma -C config/puma.rb"
+    stdin_open: true # docker run -i
+    tty: true  # docker run -t
     environment:
       RAILS_ENV: development
     volumes:

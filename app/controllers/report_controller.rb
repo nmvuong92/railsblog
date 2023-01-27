@@ -6,6 +6,7 @@ class ReportController < ApplicationController
 
   def generate
     flash[:message] = 'success'
+
     CreateReportJob.perform_later
 
     @user = User.first

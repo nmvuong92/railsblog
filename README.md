@@ -142,3 +142,4 @@ ref:
 - https://dev.to/raaynaldo/the-power-of-rails-master-key-36fh
 - dockerize: https://www.omatsuri.blog/build-ruby-on-rails-app-voi-docker-compose/
 - dockerize application: https://github.com/joaoscotto/docker-ruby-puma-nginx-postgres
+- https://medium.com/gogox-technology/debugging-rails-app-with-docker-compose-39a3767962f4
