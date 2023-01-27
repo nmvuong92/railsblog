@@ -1,4 +1,7 @@
 version: "3.8"
+networks:
+  backend:
+    driver: "bridge"
 services:
   postgres:
     image: postgres:13-alpine
@@ -9,6 +12,8 @@ services:
       - 'postgres:/var/lib/postgresql/data'
     ports:
       - "5432:5432"
+    networks:
+      - backend
   redis:
     image: redis:7.0.8-alpine
     command: redis-server
@@ -16,6 +21,26 @@ services:
       - "6379:6379"
     volumes:
       - 'redis:/data'
+    networks:
+      - backend
+  sidekiq:
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    command: bundle exec sidekiq
+    environment:
+      RAILS_ENV: 'development'
+      REDIS_URL: 'redis://redis:6379/1'
+    depends_on:
+      - app
+      - postgres
+      - redis
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    networks:
+      - backend
   app:
     build:
       context: .
@@ -28,6 +53,8 @@ services:
     depends_on:
       - postgres
       - redis
+    networks:
+      - backend
   nginx:
     build:
       context: .
@@ -36,6 +63,8 @@ services:
       - app
     ports:
       - 80:80
+    networks:
+      - backend
 volumes:
   redis:
   postgres:

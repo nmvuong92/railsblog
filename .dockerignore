@@ -1,16 +1,18 @@
-# Git
-.git
-.gitignore
+/.bundle
 
-# Logs
-log/*
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
 
-# Temp files
-tmp/*
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
+.byebug_history
 
-# Ignore node_modules
-node_modules
-
-# Ignore locally installed gems
-vendor/bundle/**/*
-vendor/bundle
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+coverage
+.idea/*
+.dockerignore

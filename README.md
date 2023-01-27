@@ -140,4 +140,5 @@ docker-compose up -d --no-deps --build  <service_name>
 ref: 
 - https://medium.com/hackernoon/how-to-set-up-a-rails-4-1-app-on-aws-with-elastic-beanstalk-and-postgresql-66d4e3412629
 - https://dev.to/raaynaldo/the-power-of-rails-master-key-36fh
+- dockerize: https://www.omatsuri.blog/build-ruby-on-rails-app-voi-docker-compose/
 - dockerize application: https://github.com/joaoscotto/docker-ruby-puma-nginx-postgres

@@ -2,6 +2,6 @@
 
 class HomeController < ApplicationController
   def index
-    @message = 'static page'
+    @message = 'static pagez'
   end
 end
