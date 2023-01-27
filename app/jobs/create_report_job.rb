@@ -5,6 +5,7 @@ class CreateReportJob < ApplicationJob
 
   def perform(*_args)
     # Do something later
-    Rails.logger.debug 'generate report job is running...'
+    Rails.logger.debug 'generate report job is runningzzz...'
+    Rails.logger.debug _args
   end
 end

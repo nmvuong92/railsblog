@@ -7,6 +7,9 @@ class ReportController < ApplicationController
   def generate
     flash[:message] = 'success'
     CreateReportJob.perform_later
+
+    @user = User.first
+    UserMailer.with(user: @user).welcome_email.deliver_later
     redirect_to '/report'
   end
 

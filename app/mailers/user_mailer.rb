@@ -3,9 +3,9 @@
 class UserMailer < ApplicationMailer
   default from: 'notification@example.com'
   layout 'mailer'
-  def mailer(user)
-    @user = user
+  def welcome_email
+    @user = params[:user]
     @url = 'http://www.gmail.com'
-    mail(to: @user.email, subject: 'welcome to my awesome site!')
+    mail(to: @user.email, subject: 'zwelcome to my awesome site!')
   end
 end

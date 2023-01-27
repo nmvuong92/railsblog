@@ -53,6 +53,8 @@ services:
     depends_on:
       - postgres
       - redis
+    env_file:
+      - .env
     networks:
       - backend
   nginx:
