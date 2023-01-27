@@ -1,6 +1,6 @@
 ## railsblog
 
-## development
+## Development (bare-metal)
 migration
 ```shell
 rake db:migrate RAILS_ENV=development
@@ -117,6 +117,27 @@ Rails.application.credentials.jwt[:secret_key] # hello
 Rails.application.credentials.api # api-key
 ```
 
+## Docker
+up
+```shell
+docker-compose build
+docker-compose up -d
+# or
+docker-compose up --build -d
+# next
+docker-compose exec app bundle exec rails db:setup db:migrate
+```
+down
+```shell
+docker-compose down
+```
+
+rebuild specific service name:
+```shell
+docker-compose up -d --no-deps --build  <service_name>
+```
+
 ref: 
 - https://medium.com/hackernoon/how-to-set-up-a-rails-4-1-app-on-aws-with-elastic-beanstalk-and-postgresql-66d4e3412629
 - https://dev.to/raaynaldo/the-power-of-rails-master-key-36fh
+- dockerize application: https://github.com/joaoscotto/docker-ruby-puma-nginx-postgres

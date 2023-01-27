@@ -1,0 +1,41 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:13-alpine
+    command: ["postgres", "-c", "fsync=false", "-c", "full_page_writes=off"]
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+    ports:
+      - "5432:5432"
+  redis:
+    image: redis:7.0.8-alpine
+    command: redis-server
+    ports:
+      - "6379:6379"
+    volumes:
+      - 'redis:/data'
+  app:
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    command: bash -c "bundle exec puma -C config/puma.rb"
+    environment:
+      RAILS_ENV: development
+    volumes:
+      - .:/app
+    depends_on:
+      - postgres
+      - redis
+  nginx:
+    build:
+      context: .
+      dockerfile: ./nginx.Dockerfile
+    depends_on:
+      - app
+    ports:
+      - 80:80
+volumes:
+  redis:
+  postgres:
