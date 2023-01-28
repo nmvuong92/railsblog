@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'fun', to: 'fun#index'
   get 'tweet/create'
   get 'tweet/follow'
   resources :widgets

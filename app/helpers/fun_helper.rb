@@ -1,0 +1,2 @@
+module FunHelper
+end

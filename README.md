@@ -152,6 +152,29 @@ download logs file from EB -> .elasticbeanstalk/logs/xxx.zip
 eb logs -z
 ```
 
+
+## automate releases on github
+ref: https://www.conventionalcommits.org/en/v1.0.0/
+
+commit convention
+```text
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+Example 1: Commit message with description and breaking change footer
+```text
+feat: allow provided config object to extend other configs
+
+BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+```
+Example 2: Commit message with scope
+```text
+feat(lang): add Polish language
+```
+
 ref: 
 - https://medium.com/hackernoon/how-to-set-up-a-rails-4-1-app-on-aws-with-elastic-beanstalk-and-postgresql-66d4e3412629
 - https://dev.to/raaynaldo/the-power-of-rails-master-key-36fh
