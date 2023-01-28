@@ -38,7 +38,7 @@ gem 'devise'
 
 gem 'figaro'
 gem 'mailtrap', '~> 0.2.1'
-gem 'redis', '~> 5.0', '>= 5.0.6'
+gem 'redis', '~> 4.8.0'
 gem 'rubocop'
 gem 'rubocop-rails'
 gem 'sentry-rails'

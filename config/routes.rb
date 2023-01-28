@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'tweet/create'
+  get 'tweet/follow'
   resources :widgets
   root to: 'home#index'
 
