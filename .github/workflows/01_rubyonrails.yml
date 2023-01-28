@@ -93,10 +93,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This variable is automatically assigned by GitHub when any action gets kicked off.
           GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE}} # Only required for Organizations, not personal accounts.
   publish-release:
-    name: Create Release
-    uses: marvinpinto/action-automatic-releases@latest
-    with:
-      repo_token: "${{ secrets.GITHUB_TOKEN }}"
-      automatic_release_tag: ${{ steps.bump_version.outputs.next-version }}
-      title: ${{ steps.bump_version.outputs.next-version }}
-      prerelease: false
+    name: Automatic Releases
+    steps:
+      - uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.ACCESS_TOKEN }}"
+          automatic_release_tag: "latest"
+          title: "Development Build"
+          files: |
+            build/app/outputs/apk/release/app-release.apk
+        
