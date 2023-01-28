@@ -102,4 +102,5 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           title: "Development Build"
-        
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
