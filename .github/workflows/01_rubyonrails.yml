@@ -94,6 +94,7 @@ jobs:
           GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE}} # Only required for Organizations, not personal accounts.
   publish-release:
     name: Automatic Releases
+    runs-on: ubuntu-latest
     steps:
       - uses: marvinpinto/action-automatic-releases@latest
         with:
