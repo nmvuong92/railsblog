@@ -153,10 +153,10 @@ eb logs -z
 ```
 
 
-## automate releases on github
+## Automate releases on github
 ref: https://www.conventionalcommits.org/en/v1.0.0/
 
-commit convention
+Commit convention
 ```text
 <type>[optional scope]: <description>
 
