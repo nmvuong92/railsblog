@@ -100,6 +100,4 @@ jobs:
           repo_token: "${{ secrets.ACCESS_TOKEN }}"
           automatic_release_tag: "latest"
           title: "Development Build"
-          files: |
-            build/app/outputs/apk/release/app-release.apk
         
