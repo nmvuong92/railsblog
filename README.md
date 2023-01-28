@@ -1,6 +1,7 @@
 ## railsblog
 
-## Development (bare-metal)
+# Development
+## Bare Metal
 migration
 ```shell
 rake db:migrate RAILS_ENV=development
@@ -13,24 +14,7 @@ build js/css/assets in production
 ```shell
 rake assets:precompile 
 ```
-## deployment
-### aws Beantalk
-to generate aws profile configuration
-```shell
-aws configure --profile eb_deploy
-```
-init with profile (no needed)
-```shell
-eb init --profile eb_deploy
-```
-deploy with profile
-```shell
-eb deploy --profile eb_deploy
-cat ~/.aws/credentials
-[eb_deploy]
-aws_access_key_id = xxx
-aws_secret_access_key = xxx
-```
+
 ## issues
 ### fix gemfile.lock
 issue 1:
@@ -70,13 +54,12 @@ commands:
     02_postgres_install:
         command: sudo yum install -y postgresql-devel
 ```
-### testing
+### Testing
 ```shell
 bundle exec rspec
 ```
 
-
-### debugging production
+### Debugging production
 download logs file from EB -> .elasticbeanstalk/logs/xxx.zip
 ```shell
 eb logs -z
@@ -117,7 +100,18 @@ Rails.application.credentials.jwt[:secret_key] # hello
 Rails.application.credentials.api # api-key
 ```
 
-## Docker
+
+## rubocop (linter)
+auto fixes
+```text
+rubocop -A
+```
+checking
+```text
+rubocop
+```
+
+## Containerize (Docker)
 up
 ```shell
 docker-compose build
@@ -135,6 +129,25 @@ docker-compose down
 rebuild specific service name:
 ```shell
 docker-compose up -d --no-deps --build  <service_name>
+```
+
+# deployment
+### aws Beantalk
+to generate aws profile configuration
+```shell
+aws configure --profile eb_deploy
+```
+init with profile (no needed)
+```shell
+eb init --profile eb_deploy
+```
+deploy with profile
+```shell
+eb deploy --profile eb_deploy
+cat ~/.aws/credentials
+[eb_deploy]
+aws_access_key_id = xxx
+aws_secret_access_key = xxx
 ```
 
 ref: 
