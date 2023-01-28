@@ -48,3 +48,5 @@ yarn-debug.log*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 .env
+
+.DS_Store

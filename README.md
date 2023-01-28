@@ -17,7 +17,7 @@ rake assets:precompile
 
 ## issues
 ### fix gemfile.lock
-issue 1:
+Issue 1:
 ```text
 "Your bundle only supports platforms ["x86-mingw32"] but your local platforms are ["ruby", "x86_64-linux"]"
 ```
@@ -27,7 +27,7 @@ bundle lock --add-platform ruby
 bundle lock --add-platform x86_64-linux
 ```
 
-issue 2: An error occurred while installing pg (1.4.5), and Bundler cannot continue.
+Issue 2: An error occurred while installing pg (1.4.5), and Bundler cannot continue.
 with aws linux 1
 ```
 packages:
@@ -59,11 +59,7 @@ commands:
 bundle exec rspec
 ```
 
-### Debugging production
-download logs file from EB -> .elasticbeanstalk/logs/xxx.zip
-```shell
-eb logs -z
-```
+### Master key
 
 master.key
 ```text
@@ -101,14 +97,14 @@ Rails.application.credentials.api # api-key
 ```
 
 
-## rubocop (linter)
-auto fixes
-```text
-rubocop -A
-```
+## Linter (rubocop)
 checking
 ```text
 rubocop
+```
+auto fixes
+```text
+rubocop -A
 ```
 
 ## Containerize (Docker)
@@ -131,7 +127,7 @@ rebuild specific service name:
 docker-compose up -d --no-deps --build  <service_name>
 ```
 
-# deployment
+# Deployment
 ### aws Beantalk
 to generate aws profile configuration
 ```shell
@@ -148,6 +144,12 @@ cat ~/.aws/credentials
 [eb_deploy]
 aws_access_key_id = xxx
 aws_secret_access_key = xxx
+```
+
+### Debugging production
+download logs file from EB -> .elasticbeanstalk/logs/xxx.zip
+```shell
+eb logs -z
 ```
 
 ref: 
