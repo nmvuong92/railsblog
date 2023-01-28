@@ -11,23 +11,41 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 test:
-  MAILTRAP_USER_NAME: 'db4e2d7c54d8ab'
-  MAILTRAP_PASSWORD: 'ed3ddcd50ed058'
+  MAILTRAP_USER_NAME: 'xxx'
+  MAILTRAP_PASSWORD: 'xxx'
   MAILTRAP_ADDRESS: 'smtp.mailtrap.io'
   MAILTRAP_DOMAIN: 'smtp.mailtrap.io'
   MAILTRAP_PORT: '2525'
   REDIS_URL: 'redis://localhost:6379/1'
+  #REDIS_URL: 'redis://redis:6379/1' # for docker
+  SENTRY_DSN: 'https://xxxx@o260227.ingest.sentry.io/1456748'
+  DB_HOST: 'localhost'
+  DB_DATABASE: 'railsblog_test'
+  DB_USERNAME: 'postgres'
+  DB_PASSWORD: 'postgres'
 development:
-  MAILTRAP_USER_NAME: 'db4e2d7c54d8ab'
-  MAILTRAP_PASSWORD: 'ed3ddcd50ed058'
+  MAILTRAP_USER_NAME: 'xxx'
+  MAILTRAP_PASSWORD: 'xxx'
   MAILTRAP_ADDRESS: 'smtp.mailtrap.io'
   MAILTRAP_DOMAIN: 'smtp.mailtrap.io'
   MAILTRAP_PORT: '2525'
   REDIS_URL: 'redis://localhost:6379/1'
+  #REDIS_URL: 'redis://redis:6379/1' # for docker
+  SENTRY_DSN: 'https://xxxx@o260227.ingest.sentry.io/1456748'
+  DB_HOST: 'localhost'
+  DB_DATABASE: 'railsblog'
+  DB_USERNAME: 'postgres'
+  DB_PASSWORD: 'postgres'
 production:
-  MAILTRAP_USER_NAME: 'db4e2d7c54d8ab'
-  MAILTRAP_PASSWORD: 'ed3ddcd50ed058'
+  MAILTRAP_USER_NAME: 'xxx'
+  MAILTRAP_PASSWORD: 'xxx'
   MAILTRAP_ADDRESS: 'smtp.mailtrap.io'
   MAILTRAP_DOMAIN: 'smtp.mailtrap.io'
   MAILTRAP_PORT: '2525'
   REDIS_URL: 'redis://localhost:6379/1'
+  #REDIS_URL: 'redis://redis:6379/1' # for docker
+  SENTRY_DSN: 'https://xxxx@o260227.ingest.sentry.io/1456748'
+  DB_HOST: 'xxx'
+  DB_DATABASE: 'railsblog_production'
+  DB_USERNAME: 'xxx'
+  DB_PASSWORD: 'xxx'
