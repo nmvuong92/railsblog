@@ -18,16 +18,18 @@ module Stub1
     end
 
     def decrease_count_on_hand(quantity)
-      XAPI::decrease_count_on_hand(quantity) # return true or false
+      Stub1::XAPI::api_decrease_count_on_hand(quantity) # return true or false
+    end
+
+    def XAPI
+      def self.api_decrease_count_on_hand
+        return [true, false].sample #return a random value true or false
+      end
     end
   end
 end
 
-def XAPI
-  def self.decrease_count_on_hand
-    return true
-  end
-end
+
 
 # A method stub is an implementation that returns a pre-determined value.
 RSpec.describe "Stub 1" do
