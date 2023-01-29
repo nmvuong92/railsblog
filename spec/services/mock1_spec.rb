@@ -1,6 +1,6 @@
 require "rails_helper"
 require "rspec/mocks"
-module Stub1
+module Mock1
   class Payment
     attr_accessor :total_cents
 
@@ -29,17 +29,17 @@ module Stub1
     end
   end
 end
-
-# A method stub is an implementation that returns a pre-determined value.
-# # Test Stubs help with inputs and Mock Objects help with outputs
-RSpec.describe "Stub 1" do
+# A mock is a stub with a built-in expectation to be satisfied during the test.
+# Test Stubs help with inputs and Mock Objects help with outputs
+RSpec.describe "Mock1" do
   it 'records the payment' do
     payment_gateway = double()
     allow(payment_gateway).to receive(:charge).and_return(payment_id: 1234)
 
-    logger = Stub1::Logger.new
+    logger = double()
+    expect(logger).to receive(:record_payment).with(1234)
 
-    payment = Stub1::Payment.new(payment_gateway, logger)
+    payment = Mock1::Payment.new(payment_gateway, logger)
     payment.total_cents = 1800
     payment.save
   end
