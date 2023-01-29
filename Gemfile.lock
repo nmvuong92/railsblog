@@ -90,6 +90,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
+    docile (1.4.0)
     erubi (1.12.0)
     ffi (1.15.5)
     figaro (1.2.0)
@@ -265,6 +266,12 @@ GEM
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
@@ -341,6 +348,7 @@ DEPENDENCIES
   sentry-ruby
   sidekiq (~> 7.0, >= 7.0.3)
   simple_form
+  simplecov (~> 0.22.0)
   spring
   sqlite3 (~> 1.4)
   turbolinks (~> 5)

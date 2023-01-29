@@ -72,7 +72,10 @@ end
 
 # Run against this stable release
 group :development, :test do
+  #rspec-rails is a testing framework for Rails 5+.
   gem 'rspec-rails', '~> 6.0.0'
+  #Code coverage for Ruby with a powerful configuration library and automatic merging of coverage across test suites
+  gem 'simplecov', '~> 0.22.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
